@@ -25,10 +25,7 @@ impl<'a> Table<'a> {
             }
         }
 
-        Self {
-            head,
-            rows,
-        }
+        Self { head, rows }
     }
 
     pub fn titles(&self) -> Option<&[&str]> {

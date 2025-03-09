@@ -1,10 +1,10 @@
 #![allow(clippy::comparison_chain)]
 
+use adw::prelude::*;
 use formatter::{Formatter, HtmlFormatter, MarkdownFormatter};
 use glib::GString;
 use glib_macros::clone;
 use libadwaita as adw;
-use adw::prelude::*;
 use table::Table;
 
 mod formatter;
@@ -102,9 +102,11 @@ fn on_app_activate(app: &adw::Application) {
         move || {
             let formatter = parse_format_option(output_dropdn.active_id());
             let separator = parse_separator_option(separator_dropdn.active_id());
-            let text = input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
+            let text =
+                input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
 
-            let table = Table::with_text_and_separator(text.as_str(), separator, titles_switch.state());
+            let table =
+                Table::with_text_and_separator(text.as_str(), separator, titles_switch.state());
             let result = formatter.format(table);
 
             result_buffer.set_text(&result);
@@ -188,4 +190,3 @@ fn parse_format_option(format_option: Option<GString>) -> Box<dyn Formatter> {
         }
     }
 }
-

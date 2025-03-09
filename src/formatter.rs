@@ -36,7 +36,6 @@ impl Formatter for HtmlFormatter {
     }
 }
 
-
 pub struct MarkdownFormatter;
 
 impl MarkdownFormatter {
@@ -78,7 +77,7 @@ impl MarkdownFormatter {
                 result.push('|');
             }
 
-            for _ in 0..=width+1 {
+            for _ in 0..=width + 1 {
                 result.push('-');
             }
         }
