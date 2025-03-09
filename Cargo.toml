@@ -1,0 +1,13 @@
+[package]
+name = "tabela"
+authors = ["Marco Mastropaolo <marco@mastropaolo.com>"]
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bidivec = "0.1.0"
+glib = { version = "0.20.9", features = ["log", "log_macros"] }
+glib-macros = "0.20.7"
+gtk4 = "0.9.6"
+libadwaita = { version = "0.7.1", features = ["gtk_v4_2", "v1_6"] }
+log = "0.4.26"
