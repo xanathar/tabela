@@ -1,4 +1,6 @@
+target/
 .vscode/
+_build/
+_install/
 
-/target
 Cargo.lock

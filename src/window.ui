@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="TabelaWindow" parent="AdwApplicationWindow">
+    <property name="title" translatable="yes">Tabëla</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <property name="content">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="primary">True</property>
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Main Menu</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">horizontal</property>
+                <property name="halign">center</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Separator</property>
+                    <property name="margin-end">10</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkDropDown" id="dropdown_separator">
+                    <property name="margin_end">30</property>
+                      <property name="model">
+                        <object class="GtkStringList">
+                          <items>
+                            <item translatable="yes">Tab</item>
+                            <item translatable="yes">Comma</item>
+                            <item translatable="yes">Semicolon</item>
+                          </items>
+                        </object>
+                      </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Output</property>
+                    <property name="margin-end">10</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkDropDown" id="dropdown_format">
+                    <property name="margin_end">30</property>
+                      <property name="model">
+                        <object class="GtkStringList">
+                          <items>
+                            <item translatable="yes">HTML</item>
+                            <item translatable="yes">Markdown</item>
+                          </items>
+                        </object>
+                      </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Titles</property>
+                    <property name="margin-end">10</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="switch_titles">
+                    <property name="state">true</property>
+                    <property name="active">true</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="hexpand">true</property>
+                <property name="vexpand">true</property>
+                <property name="margin-start">10</property>
+                <property name="margin-end">10</property>
+                <property name="margin-top">10</property>
+                <property name="margin-bottom">10</property>
+                <child>
+                  <object class="GtkTextView" id="text_input">
+                    <property name="wrap-mode">word</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="hexpand">true</property>
+                <property name="vexpand">true</property>
+                <property name="margin-start">10</property>
+                <property name="margin-end">10</property>
+                <property name="margin-bottom">10</property>
+                <child>
+                  <object class="GtkTextView" id="text_output">
+                    <property name="editable">false</property>
+                    <property name="monospace">true</property>
+                    <property name="wrap-mode">word</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Tabela</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
+

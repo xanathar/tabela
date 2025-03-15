@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.mastropaolo.tabela
+Exec=@bindir@/tabela --gapplication-service
