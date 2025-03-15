@@ -23,13 +23,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-use gettextrs::gettext;
 use adw::prelude::*;
 use adw::subclass::prelude::*;
+use gettextrs::gettext;
 use gtk::{gio, glib};
 
-use crate::config::VERSION;
 use crate::TabelaWindow;
+use crate::config::VERSION;
 
 mod imp {
     use super::*;

@@ -23,10 +23,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-use gtk::prelude::*;
 use adw::subclass::prelude::*;
-use gtk::{gio, glib};
 use glib::clone;
+use gtk::prelude::*;
+use gtk::{gio, glib};
 
 mod imp {
     use super::*;
@@ -90,37 +90,39 @@ impl TabelaWindow {
         let imp = self.imp();
         let this = self;
 
-        imp.text_input.buffer().connect_changed(clone!{
+        imp.text_input.buffer().connect_changed(clone! {
             #[strong] this,
             move |_| this.compute()
         });
-        imp.dropdown_separator.connect_selected_item_notify(clone!{
+        imp.dropdown_separator.connect_selected_item_notify(clone! {
             #[strong] this,
             move |_| this.compute()
         });
-        imp.dropdown_format.connect_selected_item_notify(clone!{
+        imp.dropdown_format.connect_selected_item_notify(clone! {
             #[strong] this,
             move |_| this.compute()
         });
-        imp.switch_titles.connect_active_notify(clone!{
+        imp.switch_titles.connect_active_notify(clone! {
             #[strong] this,
             move |_| this.compute()
         });
     }
 
     fn compute(&self) {
-        self.imp().text_output.buffer().set_text(&format!("{:?}", std::time::Instant::now()));
+        self.imp()
+            .text_output
+            .buffer()
+            .set_text(&format!("{:?}", std::time::Instant::now()));
         /*
-                    let formatter = parse_format_option(output_dropdn.active_id());
-            let separator = parse_separator_option(separator_dropdn.active_id());
-            let text =
-                input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
+                let formatter = parse_format_option(output_dropdn.active_id());
+        let separator = parse_separator_option(separator_dropdn.active_id());
+        let text =
+            input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
 
-            let table =
-                Table::with_text_and_separator(text.as_str(), separator, titles_switch.state());
-            let result = formatter.format(table);
+        let table =
+            Table::with_text_and_separator(text.as_str(), separator, titles_switch.state());
+        let result = formatter.format(table);
 
-            result_buffer.set_text(&result);*/
+        result_buffer.set_text(&result);*/
     }
 }
-
