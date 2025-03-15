@@ -4,3 +4,4 @@ _build/
 _install/
 
 Cargo.lock
+src/config.rs
