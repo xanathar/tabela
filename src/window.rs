@@ -28,6 +28,8 @@ use glib::clone;
 use gtk::prelude::*;
 use gtk::{gio, glib};
 
+use crate::formatting;
+
 mod imp {
     use super::*;
 
@@ -109,20 +111,45 @@ impl TabelaWindow {
     }
 
     fn compute(&self) {
-        self.imp()
-            .text_output
+        use formatting::Table;
+
+        let imp = self.imp();
+        imp.text_output
             .buffer()
             .set_text(&format!("{:?}", std::time::Instant::now()));
-        /*
-                let formatter = parse_format_option(output_dropdn.active_id());
-        let separator = parse_separator_option(separator_dropdn.active_id());
-        let text =
-            input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
+
+        let formatter = Self::parse_format_option(imp.dropdown_format.selected());
+        let separator = Self::parse_separator_option(imp.dropdown_separator.selected());
+        let input_buffer = imp.text_input.buffer();
+        let text = input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
 
         let table =
-            Table::with_text_and_separator(text.as_str(), separator, titles_switch.state());
+            Table::with_text_and_separator(text.as_str(), separator, imp.switch_titles.state());
         let result = formatter.format(table);
 
-        result_buffer.set_text(&result);*/
+        imp.text_output.buffer().set_text(&result);
+    }
+
+    fn parse_separator_option(separator_option: u32) -> char {
+        match separator_option {
+            0 => '\t',
+            1 => ',',
+            2 => ';',
+            n => {
+                glib::g_warning!("tabela", "Invalid separator {n}, assuming TAB");
+                '\t'
+            }
+        }
+    }
+
+    fn parse_format_option(format_option: u32) -> Box<dyn formatting::Formatter> {
+        match format_option {
+            0 => Box::new(formatting::HtmlFormatter),
+            1 => Box::new(formatting::MarkdownFormatter),
+            n => {
+                glib::g_warning!("tabela", "Invalid output format {n}, assuming Markdown");
+                Box::new(formatting::MarkdownFormatter)
+            }
+        }
     }
 }

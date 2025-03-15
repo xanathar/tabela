@@ -25,8 +25,7 @@
 
 mod application;
 mod config;
-mod formatter;
-mod table;
+mod formatting;
 mod window;
 
 use self::application::TabelaApplication;

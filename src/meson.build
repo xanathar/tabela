@@ -54,3 +54,12 @@ cargo_build = custom_target(
     cargo_opt, '&&', 'cp', 'src' / rust_target / meson.project_name(), '@OUTPUT@',
   ]
 )
+
+cargo_clippy = run_target(
+  'cargo-clippy',
+  command: [
+    'env', cargo_env,
+    cargo_bin, 'clippy',
+    cargo_opt,
+  ]
+)

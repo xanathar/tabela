@@ -33,7 +33,7 @@ impl<'a> Table<'a> {
         let mut head = Vec::new();
         let mut rows = Vec::new();
 
-        gtk::glib::g_error!(
+        gtk::glib::g_info!(
             "tabela",
             "Generating table with separator '{separator}' and titles={has_head}"
         );

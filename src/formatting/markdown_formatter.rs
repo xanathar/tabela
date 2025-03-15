@@ -22,43 +22,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
-use crate::table::Table;
 
-pub trait Formatter {
-    fn format(&self, table: Table) -> String;
-}
-
-pub struct HtmlFormatter;
-
-impl HtmlFormatter {
-    fn format_row(result: &mut String, row: &[&str], tag: &str) {
-        result.push_str("\t<tr>\n");
-        for cell in row.iter() {
-            result.push_str(&format!("\t\t<{tag}>{cell}</{tag}>\n"));
-        }
-        result.push_str("\t</tr>\n");
-    }
-}
-
-impl Formatter for HtmlFormatter {
-    fn format(&self, table: Table) -> String {
-        let mut result = String::new();
-
-        result.push_str("<table>\n");
-
-        if let Some(head) = table.titles() {
-            Self::format_row(&mut result, head, "th");
-        }
-
-        for row in table.rows() {
-            Self::format_row(&mut result, row, "td");
-        }
-
-        result.push_str("</table>\n");
-
-        result
-    }
-}
+use super::{Formatter, Table};
 
 pub struct MarkdownFormatter;
 

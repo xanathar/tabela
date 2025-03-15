@@ -110,6 +110,8 @@ impl TabelaApplication {
             // Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
             .translator_credits(gettext("translator-credits"))
             .copyright("© 2025 Marco Mastropaolo")
+            .license_type(gtk::License::MitX11)
+            .license(include_str!("../COPYING"))
             .build();
 
         about.present(Some(&window));
