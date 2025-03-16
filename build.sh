@@ -7,6 +7,8 @@ meson compile tabela-gmo -C _build
 meson compile tabela-update-po -C _build
 meson compile -C _build
 meson install -C _build
+meson compile cargo-clippy -C _build
+meson compile cargo-fmt -C build
 echo ''
 echo 'If everything went well, test build is ready.'
 echo 'Run with: _install/bin/tabela'
