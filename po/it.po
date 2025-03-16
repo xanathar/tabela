@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-16 20:53+0100\n"
+"POT-Creation-Date: 2025-03-16 20:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,14 +54,16 @@ msgstr "Marco Mastropaolo"
 #: data/com.mastropaolo.tabela.metainfo.xml.in:54
 msgid "Screenshot of a simple table formatted as Markdown, dark theme"
 msgstr ""
+"Screenshot di una semplice tabella formattata come Markdown; tema scuro."
 
 #: data/com.mastropaolo.tabela.metainfo.xml.in:58
 msgid "Screenshot of a 9.1MB large CSV formatted as Markdown, light theme"
 msgstr ""
+"Screenshot di un file CSV di 9.1MB formattato come Markdown; tema chiaro."
 
 #: data/com.mastropaolo.tabela.metainfo.xml.in:62
 msgid "Screenshot of a simple table formatted as HTML, dark theme"
-msgstr ""
+msgstr "Screenshot di una semplice tabella formattata come HTML; tema scuro."
 
 #: src/window.rs:36
 msgid "Markdown"
@@ -101,7 +103,7 @@ msgstr "Titoli"
 
 #: src/window.ui:69
 msgid "Remove quotes"
-msgstr ""
+msgstr "Rimuovi apici/virgolette"
 
 #: src/window.ui:122
 msgid "_Keyboard Shortcuts"
