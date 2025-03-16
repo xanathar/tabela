@@ -30,8 +30,8 @@ mod table;
 
 pub use html_formatter::HtmlFormatter;
 pub use markdown_formatter::MarkdownFormatter;
+pub use split_line::split_line;
 pub use table::Table;
-pub use split_line::{SplitLine, split_line};
 
 pub trait Formatter {
     fn format(&self, table: Table) -> String;

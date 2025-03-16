@@ -23,8 +23,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-use std::borrow::Cow;
 use super::split_line;
+use std::borrow::Cow;
 
 pub struct Table<'a> {
     head: Vec<Cow<'a, str>>,
@@ -32,7 +32,12 @@ pub struct Table<'a> {
 }
 
 impl<'a> Table<'a> {
-    pub fn with_text_and_separator(text: &'a str, separator: char, has_head: bool, remove_quotes: bool) -> Self {
+    pub fn with_text_and_separator(
+        text: &'a str,
+        separator: char,
+        has_head: bool,
+        remove_quotes: bool,
+    ) -> Self {
         let lines = text.split('\n');
         let mut head = Vec::new();
         let mut rows = Vec::new();
@@ -70,12 +75,4 @@ impl<'a> Table<'a> {
     pub fn rows(&self) -> impl Iterator<Item = &[Cow<'a, str>]> {
         self.rows.iter().map(|v| v.as_slice())
     }
-
-
 }
-
-
-
-
-
-

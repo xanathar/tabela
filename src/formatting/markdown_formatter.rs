@@ -23,13 +23,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-use std::borrow::Cow;
 use super::{Formatter, Table};
+use std::borrow::Cow;
 
 pub struct MarkdownFormatter;
 
 impl MarkdownFormatter {
-    fn precalc_widths<'a>(widths: &mut Vec<usize>, row: &[Cow<'a, str>]) {
+    fn precalc_widths(widths: &mut Vec<usize>, row: &[Cow<'_, str>]) {
         for (idx, cell) in row.iter().map(|c| c.trim()).enumerate() {
             #[allow(clippy::comparison_chain)]
             if idx == widths.len() {
@@ -42,7 +42,7 @@ impl MarkdownFormatter {
         }
     }
 
-    fn add_cells<'a>(result: &mut String, widths: &[usize], row: &[Cow<'a, str>]) {
+    fn add_cells(result: &mut String, widths: &[usize], row: &[Cow<'_, str>]) {
         for (index, mut width) in widths.iter().copied().enumerate() {
             if index != 0 {
                 result.push('|');

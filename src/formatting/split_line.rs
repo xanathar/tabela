@@ -46,7 +46,11 @@ impl<'a> SplitLine<'a> {
         chr == '\'' || chr == '"'
     }
 
-    fn unescape_quoted_str(has_escaped_quotes: bool, quote: char, s: &'a str) -> Option<Cow<'a, str>> {
+    fn unescape_quoted_str(
+        has_escaped_quotes: bool,
+        quote: char,
+        s: &'a str,
+    ) -> Option<Cow<'a, str>> {
         if !has_escaped_quotes {
             Some(Cow::Borrowed(s))
         } else {
@@ -100,12 +104,22 @@ impl<'a> Iterator for SplitLine<'a> {
                 }
 
                 if chr == self.separator {
-                    let Some(lqi) = last_quote_index else { continue; };
+                    let Some(lqi) = last_quote_index else {
+                        continue;
+                    };
 
                     if self.remove_quotes {
-                        return Self::unescape_quoted_str(has_escaped_quotes, opening, &self.line[start_offset..lqi]);
+                        return Self::unescape_quoted_str(
+                            has_escaped_quotes,
+                            opening,
+                            &self.line[start_offset..lqi],
+                        );
                     } else {
-                        return Self::unescape_quoted_str(has_escaped_quotes, opening, &self.line[start_offset..index]);
+                        return Self::unescape_quoted_str(
+                            has_escaped_quotes,
+                            opening,
+                            &self.line[start_offset..index],
+                        );
                     }
                 }
 
@@ -113,8 +127,16 @@ impl<'a> Iterator for SplitLine<'a> {
             }
 
             match last_quote_index {
-                Some(lqi) if self.remove_quotes => Self::unescape_quoted_str(has_escaped_quotes, opening, &self.line[start_offset..lqi]),
-                _ => Self::unescape_quoted_str(has_escaped_quotes, opening, &self.line[start_offset..])
+                Some(lqi) if self.remove_quotes => Self::unescape_quoted_str(
+                    has_escaped_quotes,
+                    opening,
+                    &self.line[start_offset..lqi],
+                ),
+                _ => Self::unescape_quoted_str(
+                    has_escaped_quotes,
+                    opening,
+                    &self.line[start_offset..],
+                ),
             }
         } else {
             for (index, chr) in self.indices.by_ref() {
@@ -132,18 +154,18 @@ pub fn split_line(line: &'_ str, separator: char, remove_quotes: bool) -> SplitL
     SplitLine::new(line, separator, remove_quotes)
 }
 
-
-
-
 #[cfg(test)]
 mod tests {
     use super::split_line;
 
     fn test(line: &str, remove_quotes: bool, expected: &[&str]) {
-        let split = split_line(line, ',', remove_quotes).map(|s| s.into_owned()).collect::<Vec<_>>();
+        let split = split_line(line, ',', remove_quotes)
+            .map(|s| s.into_owned())
+            .collect::<Vec<_>>();
 
         if split.len() != expected.len() {
-            panic!("Different lengths: {} vs {}.\nFound: {:?}\nExpected: {:?}",
+            panic!(
+                "Different lengths: {} vs {}.\nFound: {:?}\nExpected: {:?}",
                 split.len(),
                 expected.len(),
                 split,
@@ -159,7 +181,11 @@ mod tests {
 
     #[test]
     fn line_split_quoted() {
-        test("Ciao,\" Hello\",Hola", false, &["Ciao", "\" Hello\"", "Hola"]);
+        test(
+            "Ciao,\" Hello\",Hola",
+            false,
+            &["Ciao", "\" Hello\"", "Hola"],
+        );
     }
 
     #[test]
@@ -174,7 +200,11 @@ mod tests {
 
     #[test]
     fn line_split_quoted_separator() {
-        test("Ciao,\" He,llo\",Hola", false, &["Ciao", "\" He,llo\"", "Hola"]);
+        test(
+            "Ciao,\" He,llo\",Hola",
+            false,
+            &["Ciao", "\" He,llo\"", "Hola"],
+        );
     }
 
     #[test]
@@ -184,43 +214,73 @@ mod tests {
 
     #[test]
     fn line_split_quoted_quotes() {
-        test("Ciao,\" He\"\"llo\",Hola", false, &["Ciao", "\" He\"llo\"", "Hola"]);
+        test(
+            "Ciao,\" He\"\"llo\",Hola",
+            false,
+            &["Ciao", "\" He\"llo\"", "Hola"],
+        );
     }
 
     #[test]
     fn line_split_quoted_quotes_remove() {
-        test("Ciao,\" He\"\"llo\",Hola", true, &["Ciao", " He\"llo", "Hola"]);
+        test(
+            "Ciao,\" He\"\"llo\",Hola",
+            true,
+            &["Ciao", " He\"llo", "Hola"],
+        );
     }
-
 
     #[test]
     fn line_split_quoted_last_quotes() {
-        test("Ciao,\" He\"\"llo\",\"Hola\"", false, &["Ciao", "\" He\"llo\"", "\"Hola\""]);
+        test(
+            "Ciao,\" He\"\"llo\",\"Hola\"",
+            false,
+            &["Ciao", "\" He\"llo\"", "\"Hola\""],
+        );
     }
 
     #[test]
     fn line_split_quoted_last_quotes_remove() {
-        test("Ciao,\" He\"\"llo\",\"Hola\"", true, &["Ciao", " He\"llo", "Hola"]);
+        test(
+            "Ciao,\" He\"\"llo\",\"Hola\"",
+            true,
+            &["Ciao", " He\"llo", "Hola"],
+        );
     }
 
     #[test]
     fn line_split_mixed_quotes() {
-        test("Ciao,' He\"\"llo',Hola", false, &["Ciao", "' He\"\"llo'", "Hola"]);
+        test(
+            "Ciao,' He\"\"llo',Hola",
+            false,
+            &["Ciao", "' He\"\"llo'", "Hola"],
+        );
     }
 
     #[test]
     fn line_split_mixed_quotes_remove() {
-        test("Ciao,' He\"\"llo',Hola", true, &["Ciao", " He\"\"llo", "Hola"]);
+        test(
+            "Ciao,' He\"\"llo',Hola",
+            true,
+            &["Ciao", " He\"\"llo", "Hola"],
+        );
     }
 
     #[test]
     fn line_split_quoted_invalid() {
-        test("Ciao,\" He\"llo\",Hola", false, &["Ciao", "\" He\"llo\"", "Hola"]);
+        test(
+            "Ciao,\" He\"llo\",Hola",
+            false,
+            &["Ciao", "\" He\"llo\"", "Hola"],
+        );
     }
 
     #[test]
     fn line_split_quoted_invalid_remove() {
-        test("Ciao,\" He\"llo\",Hola", true, &["Ciao", " He\"llo", "Hola"]);
+        test(
+            "Ciao,\" He\"llo\",Hola",
+            true,
+            &["Ciao", " He\"llo", "Hola"],
+        );
     }
 }
-

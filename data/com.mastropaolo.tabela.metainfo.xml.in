@@ -33,7 +33,7 @@
   <!--This could for example be an HTTPS URL to an online form or a page describing how to contact the developer -->
   <url type="contact">https://github.com/xanathar/tabela</url>
   <!--URLs of this type should point to a webpage showing information on how to contribute to the described software project -->
-  <url type="contribute">https://github.com/xanathar/tabela</url>
+  <url type="contribute">https://github.com/xanathar/tabela/blob/main/CONTRIB.md</url>
 
   <translation type="gettext">tabela</translation>
   <!-- All graphical applications having a desktop file must have this tag in the MetaInfo.

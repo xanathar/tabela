@@ -24,10 +24,10 @@
  */
 
 use adw::subclass::prelude::*;
+use gettextrs::gettext;
 use glib::clone;
 use gtk::prelude::*;
 use gtk::{gio, glib};
-use gettextrs::gettext;
 
 use crate::formatting;
 use crate::translatable;
@@ -148,8 +148,12 @@ impl TabelaWindow {
         let input_buffer = imp.text_input.buffer();
         let text = input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
 
-        let table =
-            Table::with_text_and_separator(text.as_str(), separator, imp.switch_titles.state(), imp.switch_remove_quotes.state());
+        let table = Table::with_text_and_separator(
+            text.as_str(),
+            separator,
+            imp.switch_titles.state(),
+            imp.switch_remove_quotes.state(),
+        );
         let result = formatter.format(table);
 
         imp.text_output.buffer().set_text(&result);
@@ -159,7 +163,10 @@ impl TabelaWindow {
         if separator_option <= SEPARATORS.len() {
             SEPARATORS[separator_option].0
         } else {
-            glib::g_warning!("tabela", "Invalid separator {separator_option}, assuming default");
+            glib::g_warning!(
+                "tabela",
+                "Invalid separator {separator_option}, assuming default"
+            );
             SEPARATORS[0].0
         }
     }
