@@ -45,6 +45,11 @@
                     "type" : "git",
                     "url" : "file:///git/tabela"
                 }
+            ],
+            "config-opts" : [
+                "--libdir=lib",
+                "--buildtype",
+                "release"
             ]
         }
     ]
