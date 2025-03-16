@@ -10,5 +10,10 @@ meson install -C _build
 meson compile cargo-clippy -C _build
 meson compile cargo-fmt -C build
 echo ''
-echo 'If everything went well, test build is ready.'
+echo '-------------------------------------------------------'
+echo ''
+echo 'If the git repo is clean, everything is ready to merge.'
+echo ''
 echo 'Run with: _install/bin/tabela'
+echo ''
+echo '-------------------------------------------------------'

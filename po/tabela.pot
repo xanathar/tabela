@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-16 15:12+0100\n"
+"POT-Creation-Date: 2025-03-16 20:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,8 +45,15 @@ msgid "Marco Mastropaolo"
 msgstr ""
 
 #: data/com.mastropaolo.tabela.metainfo.xml.in:54
+msgid "Screenshot of a simple table formatted as Markdown, dark theme"
+msgstr ""
+
 #: data/com.mastropaolo.tabela.metainfo.xml.in:58
-msgid "A caption"
+msgid "Screenshot of a 9.1MB large CSV formatted as Markdown, light theme"
+msgstr ""
+
+#: data/com.mastropaolo.tabela.metainfo.xml.in:62
+msgid "Screenshot of a simple table formatted as HTML, dark theme"
 msgstr ""
 
 #: src/window.rs:36
@@ -77,18 +84,22 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
-#: src/window.ui:43
+#: src/window.ui:44
 msgid "Format"
 msgstr ""
 
-#: src/window.ui:54
+#: src/window.ui:55
 msgid "Titles"
 msgstr ""
 
-#: src/window.ui:106
+#: src/window.ui:69
+msgid "Remove quotes"
+msgstr ""
+
+#: src/window.ui:122
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:110
+#: src/window.ui:126
 msgid "_About Tabëla"
 msgstr ""

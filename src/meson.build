@@ -60,6 +60,15 @@ cargo_clippy = run_target(
   command: [
     'env', cargo_env,
     cargo_bin, 'clippy',
+    cargo_opt, '--', '--deny', 'warnings',
+  ]
+)
+
+cargo_clippy = run_target(
+  'cargo-fmt',
+  command: [
+    'env', cargo_env,
+    cargo_bin, 'clippy',
     cargo_opt,
   ]
 )
