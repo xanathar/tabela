@@ -1,5 +1,5 @@
 # Tabëla
-Tabëla is a very simple app formatting tables coming from spreadsheets or
+Tabëla is a very simple GNOME app that formats tables coming from spreadsheets or
 CSV/TSV files into HTML or Markdown.
 
 Input can be any text separated by TAB, commas or semicolon and it can
@@ -26,3 +26,12 @@ wherever.
 my grandma spoke mainly Piedmontese, as do my in-laws when they talk to each other and many other relatives.
 It's a dying language/dialect and is mostly used out of tech. I love using it in a tech context as a homage.
 Plus, it's a little funny thing to do.
+
+> Your icon sucks
+
+I suck at art. My best drawing pales compared to a stick figure drawn by a 3 years old. Feel free to contribute
+an icon.
+
+> The icon does not respect GNOME design guidelines
+
+See above.
