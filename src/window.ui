@@ -40,7 +40,7 @@
                 </child>
                 <child>
                   <object class="GtkLabel">
-                    <property name="label" translatable="yes">Output</property>
+                    <property name="label" translatable="yes">Format</property>
                     <property name="margin-end">10</property>
                   </object>
                 </child>
@@ -103,15 +103,11 @@
   <menu id="primary_menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">_Preferences</attribute>
-        <attribute name="action">app.preferences</attribute>
-      </item>
-      <item>
         <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
         <attribute name="action">win.show-help-overlay</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_About Tabela</attribute>
+        <attribute name="label" translatable="yes">_About Tabëla</attribute>
         <attribute name="action">app.about</attribute>
       </item>
     </section>

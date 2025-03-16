@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tabela package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tabela\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-16 13:24+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.mastropaolo.tabela.desktop.in:3
+#: data/com.mastropaolo.tabela.metainfo.xml.in:7 src/window.ui:6
+#, fuzzy
+msgid "Tabëla"
+msgstr "Informazioni su Tabëla"
+
+#: data/com.mastropaolo.tabela.desktop.in:9
+msgid "Markdown;HTML;Tables;Spreadsheet;"
+msgstr "Markdown;HTML;Tabelle;Spreadsheet;Fogli di calcolo;"
+
+#: data/com.mastropaolo.tabela.metainfo.xml.in:8
+msgid ""
+"A small utility to format tables coming from spreadsheet into Markdown or "
+"HTML"
+msgstr ""
+"Una piccola utility per formattare tabelle provenienti da spreadsheet e "
+"fogli di calcolo in Markdown o HTML"
+
+#: data/com.mastropaolo.tabela.metainfo.xml.in:10
+msgid ""
+"A really small utility to format tables coming from spreadsheet into "
+"Markdown or HTML. Input can be any text separated by TAB, commas or "
+"semicolon and it can output the table formatted for Markdown (and ASCII art) "
+"or plain HTML."
+msgstr ""
+"Una piccola utility per formattare tabelle provenienti da spreadsheet e "
+"fogli di calcolo in Markdown o HTML. L'input può essere un qualunque testo "
+"separatoda TAB, virgole o punti e virgola e può creare una tabella in "
+"formato Markdown(stile ASCII art) o semplice HTML."
+
+#: data/com.mastropaolo.tabela.metainfo.xml.in:16
+msgid "Marco Mastropaolo"
+msgstr "Marco Mastropaolo"
+
+#: data/com.mastropaolo.tabela.metainfo.xml.in:54
+#: data/com.mastropaolo.tabela.metainfo.xml.in:58
+msgid "A caption"
+msgstr ""
+
+#: src/window.rs:36
+msgid "Markdown"
+msgstr "Markdown"
+
+#: src/window.rs:37
+msgid "HTML"
+msgstr "HTML"
+
+#: src/window.rs:41
+msgid "TAB"
+msgstr "TAB"
+
+#: src/window.rs:42
+msgid "Comma"
+msgstr "Virgola"
+
+#: src/window.rs:43
+msgid "Semicolon"
+msgstr "Punto e virgola"
+
+#: src/window.ui:17
+msgid "Main Menu"
+msgstr "Menù principale"
+
+#: src/window.ui:32
+msgid "Separator"
+msgstr "Separatore"
+
+#: src/window.ui:43
+msgid "Format"
+msgstr "Formato"
+
+#: src/window.ui:54
+msgid "Titles"
+msgstr "Titoli"
+
+#: src/window.ui:106
+msgid "_Keyboard Shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: src/window.ui:110
+msgid "_About Tabëla"
+msgstr "Informazioni su Tabëla"

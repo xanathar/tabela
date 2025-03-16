@@ -36,6 +36,13 @@ use gettextrs::{bind_textdomain_codeset, bindtextdomain, textdomain};
 use gtk::prelude::*;
 use gtk::{gio, glib};
 
+/// Const function to force a const string to be added to the pot file
+/// without losing the const-ness. Obviously it needs to be translated
+/// at runtime, but it's useful with identifiers. Dirty but worky.
+pub(crate) const fn translatable(s: &'static str) -> &'static str {
+    s
+}
+
 fn main() -> glib::ExitCode {
     // Set up gettext translations
     bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR).expect("Unable to bind the text domain");

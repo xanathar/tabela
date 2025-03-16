@@ -27,18 +27,20 @@ use adw::subclass::prelude::*;
 use glib::clone;
 use gtk::prelude::*;
 use gtk::{gio, glib};
+use gettextrs::gettext;
 
 use crate::formatting;
+use crate::translatable;
 
 const FORMATTERS: &[(&dyn formatting::Formatter, &str)] = &[
-    (&formatting::MarkdownFormatter, "Markdown"),
-    (&formatting::HtmlFormatter, "HTML"),
+    (&formatting::MarkdownFormatter, translatable("Markdown")),
+    (&formatting::HtmlFormatter, translatable("HTML")),
 ];
 
 const SEPARATORS: &[(char, &str)] = &[
-    ('\t', "TAB"),
-    (',', "Comma"),
-    (';', "Semicolon"),
+    ('\t', translatable("TAB")),
+    (',', translatable("Comma")),
+    (';', translatable("Semicolon")),
 ];
 
 mod imp {
@@ -78,12 +80,12 @@ mod imp {
         fn constructed(&self) {
             self.parent_constructed();
 
-            let separators = SEPARATORS.iter().map(|s| s.1).collect::<Vec<_>>();
-            let separators = gtk::StringList::new(&separators);
+            let separators = SEPARATORS.iter().map(|s| gettext(s.1)).collect::<Vec<_>>();
+            let separators = gtk::StringList::from_iter(separators);
             self.dropdown_separator.set_model(Some(&separators));
 
-            let formatters = FORMATTERS.iter().map(|s| s.1).collect::<Vec<_>>();
-            let formatters = gtk::StringList::new(&formatters);
+            let formatters = FORMATTERS.iter().map(|s| gettext(s.1)).collect::<Vec<_>>();
+            let formatters = gtk::StringList::from_iter(formatters);
             self.dropdown_format.set_model(Some(&formatters));
 
             self.obj().init();
@@ -134,9 +136,6 @@ impl TabelaWindow {
         use formatting::Table;
 
         let imp = self.imp();
-        imp.text_output
-            .buffer()
-            .set_text(&format!("{:?}", std::time::Instant::now()));
 
         let formatter = Self::parse_format_option(imp.dropdown_format.selected() as usize);
         let separator = Self::parse_separator_option(imp.dropdown_separator.selected() as usize);
