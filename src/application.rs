@@ -102,7 +102,7 @@ impl TabelaApplication {
     fn show_about(&self) {
         let window = self.active_window().unwrap();
         let about = adw::AboutDialog::builder()
-            .application_name("tabela")
+            .application_name("Tabëla")
             .application_icon("com.mastropaolo.tabela")
             .developer_name("Marco Mastropaolo")
             .version(VERSION)

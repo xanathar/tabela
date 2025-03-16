@@ -30,6 +30,17 @@ use gtk::{gio, glib};
 
 use crate::formatting;
 
+const FORMATTERS: &[(&dyn formatting::Formatter, &str)] = &[
+    (&formatting::MarkdownFormatter, "Markdown"),
+    (&formatting::HtmlFormatter, "HTML"),
+];
+
+const SEPARATORS: &[(char, &str)] = &[
+    ('\t', "TAB"),
+    (',', "Comma"),
+    (';', "Semicolon"),
+];
+
 mod imp {
     use super::*;
 
@@ -66,6 +77,15 @@ mod imp {
     impl ObjectImpl for TabelaWindow {
         fn constructed(&self) {
             self.parent_constructed();
+
+            let separators = SEPARATORS.iter().map(|s| s.1).collect::<Vec<_>>();
+            let separators = gtk::StringList::new(&separators);
+            self.dropdown_separator.set_model(Some(&separators));
+
+            let formatters = FORMATTERS.iter().map(|s| s.1).collect::<Vec<_>>();
+            let formatters = gtk::StringList::new(&formatters);
+            self.dropdown_format.set_model(Some(&formatters));
+
             self.obj().init();
         }
     }
@@ -118,8 +138,8 @@ impl TabelaWindow {
             .buffer()
             .set_text(&format!("{:?}", std::time::Instant::now()));
 
-        let formatter = Self::parse_format_option(imp.dropdown_format.selected());
-        let separator = Self::parse_separator_option(imp.dropdown_separator.selected());
+        let formatter = Self::parse_format_option(imp.dropdown_format.selected() as usize);
+        let separator = Self::parse_separator_option(imp.dropdown_separator.selected() as usize);
         let input_buffer = imp.text_input.buffer();
         let text = input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
 
@@ -130,26 +150,21 @@ impl TabelaWindow {
         imp.text_output.buffer().set_text(&result);
     }
 
-    fn parse_separator_option(separator_option: u32) -> char {
-        match separator_option {
-            0 => '\t',
-            1 => ',',
-            2 => ';',
-            n => {
-                glib::g_warning!("tabela", "Invalid separator {n}, assuming TAB");
-                '\t'
-            }
+    fn parse_separator_option(separator_option: usize) -> char {
+        if separator_option <= SEPARATORS.len() {
+            SEPARATORS[separator_option].0
+        } else {
+            glib::g_warning!("tabela", "Invalid separator {separator_option}, assuming default");
+            SEPARATORS[0].0
         }
     }
 
-    fn parse_format_option(format_option: u32) -> Box<dyn formatting::Formatter> {
-        match format_option {
-            0 => Box::new(formatting::HtmlFormatter),
-            1 => Box::new(formatting::MarkdownFormatter),
-            n => {
-                glib::g_warning!("tabela", "Invalid output format {n}, assuming Markdown");
-                Box::new(formatting::MarkdownFormatter)
-            }
+    fn parse_format_option(format_option: usize) -> &'static dyn formatting::Formatter {
+        if format_option <= FORMATTERS.len() {
+            FORMATTERS[format_option].0
+        } else {
+            glib::g_warning!("tabela", "Invalid format {format_option}, assuming default");
+            FORMATTERS[0].0
         }
     }
 }

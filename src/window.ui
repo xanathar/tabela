@@ -36,15 +36,6 @@
                 <child>
                   <object class="GtkDropDown" id="dropdown_separator">
                     <property name="margin_end">30</property>
-                      <property name="model">
-                        <object class="GtkStringList">
-                          <items>
-                            <item translatable="yes">Tab</item>
-                            <item translatable="yes">Comma</item>
-                            <item translatable="yes">Semicolon</item>
-                          </items>
-                        </object>
-                      </property>
                   </object>
                 </child>
                 <child>
@@ -56,14 +47,6 @@
                 <child>
                   <object class="GtkDropDown" id="dropdown_format">
                     <property name="margin_end">30</property>
-                      <property name="model">
-                        <object class="GtkStringList">
-                          <items>
-                            <item translatable="yes">HTML</item>
-                            <item translatable="yes">Markdown</item>
-                          </items>
-                        </object>
-                      </property>
                   </object>
                 </child>
                 <child>
