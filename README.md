@@ -50,7 +50,7 @@ See above.
 
 Pasting a [9.1MB CSV file](https://www.stats.govt.nz/assets/Uploads/Effects-of-COVID-19-on-trade/Effects-of-COVID-19-on-trade-At-15-December-2021-provisional/Download-data/effects-of-covid-19-on-trade-at-15-december-2021-provisional.csv) from the [government of New Zealand](https://www.stats.govt.nz/large-datasets/csv-files-for-download/) makes the app a little slower to use but still usable and responsive. That's plenty of size for the purpose of this application, and probably nobody wants to look at such a large table in Markdown anyway.
 
-![Example with a lot of data](https://github.com/xanathar/tabela/blob/main/doc_assets/albums_md.png)
+![Example with a lot of data](https://github.com/xanathar/tabela/blob/main/doc_assets/large_file_md.png)
 
 > Can I see an example of what the html output would be?
 
