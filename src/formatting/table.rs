@@ -22,13 +22,17 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
+use std::borrow::Cow;
+use super::split_line;
+
 pub struct Table<'a> {
-    head: Vec<&'a str>,
-    rows: Vec<Vec<&'a str>>,
+    head: Vec<Cow<'a, str>>,
+    rows: Vec<Vec<Cow<'a, str>>>,
 }
 
 impl<'a> Table<'a> {
-    pub fn with_text_and_separator(text: &'a str, separator: char, has_head: bool) -> Self {
+    pub fn with_text_and_separator(text: &'a str, separator: char, has_head: bool, remove_quotes: bool) -> Self {
         let lines = text.split('\n');
         let mut head = Vec::new();
         let mut rows = Vec::new();
@@ -43,7 +47,7 @@ impl<'a> Table<'a> {
                 continue;
             }
 
-            let cells = l.split(separator);
+            let cells = split_line(l, separator, remove_quotes);
 
             if has_head && head.is_empty() {
                 head = cells.collect();
@@ -55,7 +59,7 @@ impl<'a> Table<'a> {
         Self { head, rows }
     }
 
-    pub fn titles(&self) -> Option<&[&str]> {
+    pub fn titles(&self) -> Option<&[Cow<'a, str>]> {
         if self.head.is_empty() {
             None
         } else {
@@ -63,7 +67,15 @@ impl<'a> Table<'a> {
         }
     }
 
-    pub fn rows(&self) -> impl Iterator<Item = &[&str]> {
+    pub fn rows(&self) -> impl Iterator<Item = &[Cow<'a, str>]> {
         self.rows.iter().map(|v| v.as_slice())
     }
+
+
 }
+
+
+
+
+
+

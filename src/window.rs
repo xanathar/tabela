@@ -56,6 +56,8 @@ mod imp {
         #[template_child]
         pub switch_titles: TemplateChild<gtk::Switch>,
         #[template_child]
+        pub switch_remove_quotes: TemplateChild<gtk::Switch>,
+        #[template_child]
         pub text_input: TemplateChild<gtk::TextView>,
         #[template_child]
         pub text_output: TemplateChild<gtk::TextView>,
@@ -130,6 +132,10 @@ impl TabelaWindow {
             #[strong] this,
             move |_| this.compute()
         });
+        imp.switch_remove_quotes.connect_active_notify(clone! {
+            #[strong] this,
+            move |_| this.compute()
+        });
     }
 
     fn compute(&self) {
@@ -143,7 +149,7 @@ impl TabelaWindow {
         let text = input_buffer.text(&input_buffer.start_iter(), &input_buffer.end_iter(), true);
 
         let table =
-            Table::with_text_and_separator(text.as_str(), separator, imp.switch_titles.state());
+            Table::with_text_and_separator(text.as_str(), separator, imp.switch_titles.state(), imp.switch_remove_quotes.state());
         let result = formatter.format(table);
 
         imp.text_output.buffer().set_text(&result);

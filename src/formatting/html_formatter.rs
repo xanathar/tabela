@@ -23,14 +23,15 @@
  * SPDX-License-Identifier: MIT
  */
 
+use std::borrow::Cow;
 use super::{Formatter, Table};
 
 pub struct HtmlFormatter;
 
 impl HtmlFormatter {
-    fn format_row(result: &mut String, row: &[&str], tag: &str) {
+    fn format_row<'a>(result: &mut String, row: &[Cow<'a, str>], tag: &str) {
         result.push_str("\t<tr>\n");
-        for cell in row.iter() {
+        for cell in row.iter().map(|c| c.trim()) {
             result.push_str(&format!("\t\t<{tag}>{cell}</{tag}>\n"));
         }
         result.push_str("\t</tr>\n");

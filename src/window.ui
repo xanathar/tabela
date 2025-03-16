@@ -31,6 +31,7 @@
                   <object class="GtkLabel">
                     <property name="label" translatable="yes">Separator</property>
                     <property name="margin-end">10</property>
+                    <property name="margin-start">30</property>
                   </object>
                 </child>
                 <child>
@@ -60,6 +61,21 @@
                     <property name="state">true</property>
                     <property name="active">true</property>
                     <property name="valign">center</property>
+                    <property name="margin_end">30</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Remove quotes</property>
+                    <property name="margin-end">10</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="switch_remove_quotes">
+                    <property name="state">true</property>
+                    <property name="active">true</property>
+                    <property name="valign">center</property>
+                    <property name="margin_end">30</property>
                   </object>
                 </child>
               </object>
