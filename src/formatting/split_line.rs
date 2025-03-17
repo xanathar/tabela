@@ -163,15 +163,7 @@ mod tests {
             .map(|s| s.into_owned())
             .collect::<Vec<_>>();
 
-        if split.len() != expected.len() {
-            panic!(
-                "Different lengths: {} vs {}.\nFound: {:?}\nExpected: {:?}",
-                split.len(),
-                expected.len(),
-                split,
-                expected,
-            );
-        }
+        assert_eq!(split, expected);
     }
 
     #[test]
@@ -190,12 +182,12 @@ mod tests {
 
     #[test]
     fn line_split_quoted_remove() {
-        test("Ciao,\" Hello\",Hola", false, &["Ciao", " Hello", "Hola"]);
+        test("Ciao,\" Hello\",Hola", true, &["Ciao", " Hello", "Hola"]);
     }
 
     #[test]
     fn line_split_quoted_truncated() {
-        test("Ciao,\" Hello,Hola", false, &["Ciao", " Hello,Hola"]);
+        test("Ciao,\" Hello,Hola", false, &["Ciao", "\" Hello,Hola"]);
     }
 
     #[test]
@@ -284,3 +276,4 @@ mod tests {
         );
     }
 }
+
