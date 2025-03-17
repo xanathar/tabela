@@ -1,17 +1,22 @@
 # Tabëla
 
+![GitHub](https://img.shields.io/badge/Source_code-GitHub-blue)
+
 Tabëla is a very simple GNOME app that formats tables coming from spreadsheets or
 CSV/TSV files into HTML or Markdown.
 
 Input can be any text separated by TAB, commas or semicolon and it can
 output the table formatted for Markdown (and ASCII art) or plain HTML.
 
+It is typically used as a converter by pasting data coming from a spreadsheet like
+LibreOffice Calc or Gnumeric, but can also be used as a simple editor.
+
 ## Usage
 
 ![Example image of Tabela's UI](https://raw.githubusercontent.com/xanathar/tabela/refs/heads/main/doc_assets/albums_md.png)
 
-Just copy from your spreadsheet of choice into the top area. Markdown or HTML will appear in the bottom.
-Select and Ctrl+C to copy the result.
+Just copy the cells you want from your spreadsheet of choice and paste them into the top area.
+Markdown or HTML will appear in the bottom. Select and Ctrl+C to copy the result.
 
 ## FAQ
 
