@@ -64,3 +64,16 @@ cargo_clippy = run_target(
   ]
 )
 
+cargo_test = run_target(
+  'cargo-test',
+  command: [
+    'env', cargo_env,
+    cargo_bin, 'test',
+    cargo_opt,
+  ]
+)
+
+env_sh = find_program('env', required: true)
+test('Rust tests', cargo_bin, env: cargo_env,
+     args: ['test', cargo_opt])
+
