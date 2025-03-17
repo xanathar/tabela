@@ -2,6 +2,7 @@ target/
 .vscode/
 _build/
 _install/
+.flatpak-builder/
 
 Cargo.lock
 src/config.rs

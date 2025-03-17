@@ -31,11 +31,13 @@ pub struct MarkdownFormatter;
 impl MarkdownFormatter {
     fn precalc_widths(widths: &mut Vec<usize>, row: &[Cow<'_, str>]) {
         for (idx, cell) in row.iter().map(|c| c.trim()).enumerate() {
+            let cell_len = cell.chars().count();
+
             #[allow(clippy::comparison_chain)]
             if idx == widths.len() {
-                widths.push(cell.len());
+                widths.push(cell_len);
             } else if idx < widths.len() {
-                widths[idx] = std::cmp::max(widths[idx], cell.len());
+                widths[idx] = std::cmp::max(widths[idx], cell_len);
             } else {
                 gtk::glib::g_error!("tabela", "Width index out of range");
             }
@@ -51,8 +53,9 @@ impl MarkdownFormatter {
             result.push(' ');
 
             if index < row.len() {
-                result.push_str(row[index].trim());
-                width = width.saturating_sub(row[index].len());
+                let s = row[index].trim();
+                result.push_str(s);
+                width = width.saturating_sub(s.chars().count());
             }
 
             for _ in 0..=width {

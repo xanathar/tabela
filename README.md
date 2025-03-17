@@ -53,7 +53,7 @@ See above.
 
 > How big of a file I can paste into the tool?
 
-Pasting a [9.1MB CSV file](https://www.stats.govt.nz/assets/Uploads/Effects-of-COVID-19-on-trade/Effects-of-COVID-19-on-trade-At-15-December-2021-provisional/Download-data/effects-of-covid-19-on-trade-at-15-december-2021-provisional.csv) from the [government of New Zealand](https://www.stats.govt.nz/large-datasets/csv-files-for-download/) makes the app a little slower to use but still usable and responsive. That's plenty of size for the purpose of this application, and probably nobody wants to look at such a large table in Markdown anyway.
+Pasting a [9.1MB CSV file](https://www.stats.govt.nz/assets/Uploads/Effects-of-COVID-19-on-trade/Effects-of-COVID-19-on-trade-At-15-December-2021-provisional/Download-data/effects-of-covid-19-on-trade-at-15-december-2021-provisional.csv) from the [government of New Zealand](https://www.stats.govt.nz/large-datasets/csv-files-for-download/) and the application remains snappy and responsive. That's plenty of size for the purpose of this application, and probably nobody wants to look at such a large table in Markdown anyway. Pasting a 160MB file from the same governative site makes Tabëla appear stuck only for a few seconds, but the formatting still takes place.
 
 ![Example with a lot of data](https://raw.githubusercontent.com/xanathar/tabela/refs/heads/main/doc_assets/large_file_md.png)
 

@@ -82,6 +82,10 @@ impl<'a> Iterator for SplitLine<'a> {
     fn next(&mut self) -> Option<Self::Item> {
         let (start_offset, opening) = self.indices.next()?;
 
+        if opening == self.separator {
+            return Some("".into());
+        }
+
         if Self::is_quote(opening) {
             let start_offset = if self.remove_quotes {
                 self.indices.offset()
@@ -273,6 +277,44 @@ mod tests {
             "Ciao,\" He\"llo\",Hola",
             true,
             &["Ciao", " He\"llo", "Hola"],
+        );
+    }
+
+    #[test]
+    fn line_split_missing_field_start() {
+        test(
+            "Ciao,,Hola",
+            true,
+            &["Ciao", "", "Hola"],
+        );
+    }
+
+    #[test]
+    fn line_split_missing_field_middle() {
+        test(
+            ",Ciao,Hola",
+            true,
+            &["", "Ciao", "Hola"],
+        );
+    }
+
+    #[test]
+    fn line_split_missing_field_end() {
+        // we tolerate a missing third value
+        test(
+            "Ciao,Hola,",
+            true,
+            &["Ciao", "Hola"],
+        );
+    }
+
+    #[test]
+    fn line_split_missing_field_all() {
+        // we tolerate a missing third value
+        test(
+            ",,",
+            true,
+            &["", ""],
         );
     }
 }
