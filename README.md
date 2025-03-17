@@ -1,6 +1,6 @@
 # Tabëla
 
-[<img src="https://img.shields.io/badge/Source_code-GitHub-blue" alt="GitHub">](https://github.com/xanathar/tabela)
+[<img src="https://img.shields.io/badge/Source_code-GitHub-BBAACC" alt="GitHub">](https://github.com/xanathar/tabela)
 
 Tabëla is a very simple GNOME app that formats tables coming from spreadsheets or
 CSV/TSV files into HTML or Markdown.
