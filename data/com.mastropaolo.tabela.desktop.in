@@ -5,6 +5,6 @@ Icon=com.mastropaolo.tabela
 Terminal=false
 Type=Application
 Categories=Utility;Development;
-Keywords=Markdown;HTML;Tables;Spreadsheet;
+Keywords=Markdown;HTML;Tables;Spreadsheet;GTK;
 StartupNotify=true
-DBusActivatable=true
+
