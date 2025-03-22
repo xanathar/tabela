@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-16 20:55+0100\n"
+"POT-Creation-Date: 2025-03-23 09:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.mastropaolo.tabela.desktop.in:3
+#: data/com.mastropaolo.tabela.desktop.in:2
 #: data/com.mastropaolo.tabela.metainfo.xml.in:7 src/window.ui:6
 msgid "Tabëla"
 msgstr ""
 
-#: data/com.mastropaolo.tabela.desktop.in:9
-msgid "Markdown;HTML;Tables;Spreadsheet;"
+#: data/com.mastropaolo.tabela.desktop.in:8
+msgid "Markdown;HTML;Tables;Spreadsheet;GTK;"
 msgstr ""
 
 #: data/com.mastropaolo.tabela.metainfo.xml.in:8

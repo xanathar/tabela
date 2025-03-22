@@ -27,6 +27,7 @@ meson compile -C _build
 meson install -C _build
 meson compile cargo-clippy -C _build
 cargo fmt
+meson dist -C _build
 
 echo ''
 echo '-------------------------------------------------------'

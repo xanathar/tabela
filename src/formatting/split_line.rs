@@ -282,39 +282,23 @@ mod tests {
 
     #[test]
     fn line_split_missing_field_start() {
-        test(
-            "Ciao,,Hola",
-            true,
-            &["Ciao", "", "Hola"],
-        );
+        test("Ciao,,Hola", true, &["Ciao", "", "Hola"]);
     }
 
     #[test]
     fn line_split_missing_field_middle() {
-        test(
-            ",Ciao,Hola",
-            true,
-            &["", "Ciao", "Hola"],
-        );
+        test(",Ciao,Hola", true, &["", "Ciao", "Hola"]);
     }
 
     #[test]
     fn line_split_missing_field_end() {
         // we tolerate a missing third value
-        test(
-            "Ciao,Hola,",
-            true,
-            &["Ciao", "Hola"],
-        );
+        test("Ciao,Hola,", true, &["Ciao", "Hola"]);
     }
 
     #[test]
     fn line_split_missing_field_all() {
         // we tolerate a missing third value
-        test(
-            ",,",
-            true,
-            &["", ""],
-        );
+        test(",,", true, &["", ""]);
     }
 }

@@ -1,4 +1,4 @@
-project('tabela', 'rust', 
+project('tabela', 'rust',
           version: '0.1.0',
     meson_version: '>= 1.0.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
@@ -7,8 +7,11 @@ project('tabela', 'rust',
 i18n = import('i18n')
 gnome = import('gnome')
 
-
-
+meson.add_dist_script(
+  'build-aux/dist-vendor.sh',
+  meson.project_source_root(),
+  meson.project_build_root() / 'meson-dist' / meson.project_name() + '-' + meson.project_version(),
+)
 
 subdir('data')
 subdir('src')

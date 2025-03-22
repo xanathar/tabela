@@ -97,28 +97,38 @@ mod tests {
 
     #[test]
     fn table_happy_case() {
-        let t = Table::with_text_and_separator(
-            "t1,t2,t3\na1,a2,a3\nb1,b2,b3",
-            ',', true, true);
+        let t = Table::with_text_and_separator("t1,t2,t3\na1,a2,a3\nb1,b2,b3", ',', true, true);
 
-        compare(t, &["t1", "t2", "t3"], &[&["a1", "a2", "a3"], &["b1", "b2", "b3"]]);
+        compare(
+            t,
+            &["t1", "t2", "t3"],
+            &[&["a1", "a2", "a3"], &["b1", "b2", "b3"]],
+        );
     }
 
     #[test]
     fn table_happy_case_no_titles() {
-        let t = Table::with_text_and_separator(
-            "t1,t2,t3\na1,a2,a3\nb1,b2,b3",
-            ',', false, true);
+        let t = Table::with_text_and_separator("t1,t2,t3\na1,a2,a3\nb1,b2,b3", ',', false, true);
 
-        compare(t, &[], &[&["t1", "t2", "t3"], &["a1", "a2", "a3"], &["b1", "b2", "b3"]]);
+        compare(
+            t,
+            &[],
+            &[
+                &["t1", "t2", "t3"],
+                &["a1", "a2", "a3"],
+                &["b1", "b2", "b3"],
+            ],
+        );
     }
 
     #[test]
     fn table_empty_field() {
-        let t = Table::with_text_and_separator(
-            "t1,t2,t3\na1,,a3\nb1,b2,b3",
-            ',', false, true);
+        let t = Table::with_text_and_separator("t1,t2,t3\na1,,a3\nb1,b2,b3", ',', false, true);
 
-        compare(t, &[], &[&["t1", "t2", "t3"], &["a1", "", "a3"], &["b1", "b2", "b3"]]);
+        compare(
+            t,
+            &[],
+            &[&["t1", "t2", "t3"], &["a1", "", "a3"], &["b1", "b2", "b3"]],
+        );
     }
 }
