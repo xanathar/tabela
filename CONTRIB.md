@@ -25,6 +25,6 @@ _install/bin/tabela
 
 ## Before submitting a PR
 
-Run the `check.sh` script. If the repository has changed files, please
+Run `./tool.sh check`. If the repository has changed files, please
 commit them (after checking the changes).
 

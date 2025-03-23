@@ -47,7 +47,6 @@
                 }
             ],
             "config-opts" : [
-                "--libdir=lib",
                 "--buildtype",
                 "release"
             ]
