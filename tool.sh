@@ -32,6 +32,12 @@ require () {
     fi
 }
 
+init_meson () {
+    if [ ! -d "_build" ]; then
+        meson setup _build --prefix "$(pwd)/_install"
+    fi
+}
+
 fix-translation-of-file () {
     if git diff --ignore-matching-lines='POT-Creation-Date' --exit-code "$1" ; then
         git restore "$1"
@@ -50,18 +56,13 @@ do_clean () {
 }
 
 do_build () {
-    if [ ! -d "$DIR" ]; then
-        meson setup _build --prefix "$(pwd)/_install"
-    fi
-
+    init_meson
     meson compile -C _build
     meson install -C _build
 }
 
 do_qcheck () {
-    if [ ! -d "$DIR" ]; then
-        meson setup _build --prefix "$(pwd)/_install"
-    fi
+    init_meson
 
     meson compile tabela-pot -C _build
     meson compile tabela-gmo -C _build
@@ -179,6 +180,16 @@ do_run () {
     _install/bin/tabela
 }
 
+do_test () {
+    init_meson
+    meson compile cargo-test -C _build
+}
+
+do_mtest () {
+    init_meson
+    meson test -C _build
+}
+
 usage () {
     echo "tool.sh <COMMAND> "
     echo ""
@@ -187,6 +198,7 @@ usage () {
     echo "   build - Perform a quick build using meson"
     echo "     run - Perform a quick build using meson and runs it"
     echo "    test - Runs unit tests"
+    echo "   mtest - Runs meson tests (includes unit tests)"
     echo "   check - Performs a check that everything is ok before commits"
     echo "  qcheck - Performs a quicker check with no build"
     echo " publish - Publishes a new release of tarball for a future flatpak release"
@@ -210,6 +222,12 @@ main () {
             ;;
         "run")
             do_run
+            ;;
+        "test")
+            do_test
+            ;;
+        "mtest")
+            do_mtest
             ;;
         "check")
             do_check

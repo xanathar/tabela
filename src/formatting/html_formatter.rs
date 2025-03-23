@@ -95,7 +95,7 @@ mod tests {
 
     #[test]
     fn html_unnecessary_escapes() {
-        let s = HtmlFormatter::escape("dfsfdsdz<fùù**ùù§");
+        let s = HtmlFormatter::escape("dfsfdsdfùù**ùù§");
         if let Cow::Owned(_) = s {
             panic!();
         }
