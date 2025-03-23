@@ -30,7 +30,9 @@ pub struct HtmlFormatter;
 
 impl HtmlFormatter {
     fn escape(s: &str) -> Cow<'_, str> {
-        let needs_escaping = s.bytes().any(|c| c == b'"' || c == b'\'' || c == b'&' || c == b'<' || c == b'>');
+        let needs_escaping = s
+            .bytes()
+            .any(|c| c == b'"' || c == b'\'' || c == b'&' || c == b'<' || c == b'>');
 
         if needs_escaping {
             let mut res = String::with_capacity(s.len());
@@ -101,4 +103,3 @@ mod tests {
         }
     }
 }
-
