@@ -1,4 +1,4 @@
-application_id = 'com.mastropaolo.tabela'
+application_id = 'com.mastropaolo.www.tabela'
 
 scalable_dir = 'hicolor' / 'scalable' / 'apps'
 install_data(

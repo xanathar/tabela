@@ -1,5 +1,5 @@
 {
-    "id" : "com.mastropaolo.tabela",
+    "id" : "com.mastropaolo.www.tabela",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
@@ -17,6 +17,7 @@
     "build-options" : {
         "append-path" : "/usr/lib/sdk/rust-stable/bin",
         "build-args" : [
+            "--share=network"
         ],
         "env" : {
             "RUST_BACKTRACE" : "1",
@@ -46,9 +47,7 @@
                 }
             ],
             "config-opts" : [
-                "--libdir=lib",
-                "--buildtype",
-                "release"
+                "--libdir=lib"
             ]
         }
     ]

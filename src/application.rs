@@ -103,7 +103,7 @@ impl TabelaApplication {
         let window = self.active_window().unwrap();
         let about = adw::AboutDialog::builder()
             .application_name("Tabëla")
-            .application_icon("com.mastropaolo.tabela")
+            .application_icon("com.mastropaolo.www.tabela")
             .developer_name("Marco Mastropaolo")
             .version(VERSION)
             .developers(vec!["Marco Mastropaolo"])

@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-data/com.mastropaolo.tabela.desktop.in
-data/com.mastropaolo.tabela.gschema.xml
-data/com.mastropaolo.tabela.metainfo.xml.in
+data/com.mastropaolo.www.tabela.desktop.in
+data/com.mastropaolo.www.tabela.gschema.xml
+data/com.mastropaolo.www.tabela.metainfo.xml.in
 src/window.rs
 src/window.ui

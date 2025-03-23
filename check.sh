@@ -14,7 +14,6 @@ fix-translations () {
     fix-translation-of-file 'po/tabela.pot'
 }
 
-
 meson setup _build --prefix "$(pwd)/_install"
 
 meson compile tabela-pot -C _build
@@ -27,7 +26,6 @@ meson compile -C _build
 meson install -C _build
 meson compile cargo-clippy -C _build
 cargo fmt
-meson dist -C _build
 
 echo ''
 echo '-------------------------------------------------------'
