@@ -1,15 +1,23 @@
 #! /bin/bash
 set -e
 
-if [ ! "$(which jq)" ]; then
-    echo "jq not found in path. Please install jq then try again."
+die () {
+    echo "$1"
     exit 1
+}
+
+
+
+if [ ! "$(which jq)" ]; then
+    die "jq not found in path. Please install jq then try again."
 fi
 
 if [ ! "$(which gh)" ]; then
-    echo "gh not found in path. Please install github cli then try again."
-    exit 1
+    die "gh not found in path. Please install github cli then try again."
 fi
+
+git diff --exit-code >/dev/null 2>&1 || die "Repo is dirty, please commit & push changes."
+git merge-base --is-ancestor HEAD '@{u}' 2>&1 || die "Changes have not been pushed."
 
 rm -rf _build
 
