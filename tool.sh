@@ -81,11 +81,6 @@ do_publish () {
     require jq
     require gh
 
-    info "Checking repo is clean and pushed upstream"
-
-    git diff --exit-code >/dev/null 2>&1 || die "Repo is dirty, please commit & push changes."
-    git merge-base --is-ancestor HEAD '@{u}' 2>&1 || die "Changes have not been pushed."
-
     info "Checking version is valid"
 
     VERSION="$(meson introspect meson.build --projectinfo | jq -r '.version')"
@@ -95,6 +90,11 @@ do_publish () {
         echo "Tag $TAG already exists -- bailing out. Change the version in the meson file and start again."
         exit 1
     fi
+
+    info "Checking repo is clean and pushed upstream"
+
+    git diff --exit-code >/dev/null 2>&1 || die "Repo is dirty, please commit & push changes."
+    git merge-base --is-ancestor HEAD '@{u}' 2>&1 || die "Changes have not been pushed."
 
     echo ""
     echo ""
@@ -189,6 +189,9 @@ main () {
         usage
         exit 0
     fi
+
+    require meson
+    require cargo
 
     case "$1" in
         "clean")
