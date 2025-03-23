@@ -42,8 +42,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/xanathar/tabela/releases/download/v0.1.0/tabela-0.1.0.tar.xz",
-                    "sha256" : "a33d5adfb260e3997d6fec66ba9ab51daf8b4036693df8556a5d3fb013a154b1"
+                    "url" : "TARBALL_URL",
+                    "sha256" : "TARBALL_HASH"
                 }
             ],
             "config-opts" : [
