@@ -132,7 +132,7 @@ do_publish () {
 
     info "Creating manifest..."
 
-    URL=$(gh release view v0.1.2 --json assets | jq ".assets[0].url" -r)
+    URL=$(gh release view "$TAG" --json assets | jq ".assets[0].url" -r)
     HASH=$(cut "_build/meson-dist/tabela-$VERSION.tar.xz.sha256sum" -b 1-64)
 
     m4 -DTARBALL_URL="$URL" -DTARBALL_HASH="$HASH" "build-aux/$APP_ID.json.in" > "_build/$APP_ID.json"
