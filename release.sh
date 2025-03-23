@@ -6,8 +6,6 @@ die () {
     exit 1
 }
 
-
-
 if [ ! "$(which jq)" ]; then
     die "jq not found in path. Please install jq then try again."
 fi
@@ -19,8 +17,6 @@ fi
 git diff --exit-code >/dev/null 2>&1 || die "Repo is dirty, please commit & push changes."
 git merge-base --is-ancestor HEAD '@{u}' 2>&1 || die "Changes have not been pushed."
 
-rm -rf _build
-
 VERSION="$(meson introspect meson.build --projectinfo | jq -r '.version')"
 TAG="v$VERSION"
 
@@ -29,6 +25,22 @@ if [ "$(git tag -l "$TAG")" ]; then
     exit 1
 fi
 
+echo "Releasing version $VERSION"
+echo "Press Ctrl+C in 5 seconds to abort"
+echo "5..."
+sleep 1
+echo "4..."
+sleep 1
+echo "3..."
+sleep 1
+echo "2..."
+sleep 1
+echo "1..."
+sleep 1
+echo "GO!"
+
+rm -rf _build
+
 ./check.sh
 
 meson dist -C _build
@@ -36,9 +48,6 @@ meson dist -C _build
 git tag "$TAG"
 git push origin tag "$TAG"
 
-gh create release "$TAG" --generate-notes "_build/meson-dist/tabela-$VERSION.tar.xz"
-
-
-
+gh release create "$TAG" --generate-notes "_build/meson-dist/tabela-$VERSION.tar.xz"
 
 
