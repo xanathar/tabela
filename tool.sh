@@ -66,12 +66,8 @@ do_qcheck () {
     meson compile tabela-pot -C _build
     meson compile tabela-gmo -C _build
     meson compile tabela-update-po -C _build
-    meson test -C _build
 
     fix-translations
-
-    meson compile cargo-clippy -C _build
-    cargo fmt
 }
 
 do_publish () {
@@ -164,6 +160,10 @@ do_check () {
     do_clean
     do_build
     do_qcheck
+
+    meson test -C _build --timeout-multiplier 0
+    meson compile cargo-clippy -C _build
+    cargo fmt
 
     echo ''
     echo '-------------------------------------------------------'
