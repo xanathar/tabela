@@ -173,12 +173,20 @@ do_check () {
     echo '-------------------------------------------------------'
 }
 
+do_run () {
+    do_build
+    info "Build succesfull, running..."
+    _install/bin/tabela
+}
+
 usage () {
     echo "tool.sh <COMMAND> "
     echo ""
     echo "COMMAND:"
     echo "   clean - Cleans all build directories"
     echo "   build - Perform a quick build using meson"
+    echo "     run - Perform a quick build using meson and runs it"
+    echo "    test - Runs unit tests"
     echo "   check - Performs a check that everything is ok before commits"
     echo "  qcheck - Performs a quicker check with no build"
     echo " publish - Publishes a new release of tarball for a future flatpak release"
@@ -199,6 +207,9 @@ main () {
             ;;
         "build")
             do_build
+            ;;
+        "run")
+            do_run
             ;;
         "check")
             do_check

@@ -29,10 +29,34 @@ use std::borrow::Cow;
 pub struct HtmlFormatter;
 
 impl HtmlFormatter {
+    fn escape(s: &str) -> Cow<'_, str> {
+        let needs_escaping = s.bytes().any(|c| c == b'"' || c == b'\'' || c == b'&' || c == b'<' || c == b'>');
+
+        if needs_escaping {
+            let mut res = String::with_capacity(s.len());
+
+            for c in s.chars() {
+                match c {
+                    '&' => res.push_str("&amp;"),
+                    '"' => res.push_str("&quot;"),
+                    '<' => res.push_str("&lt;"),
+                    '>' => res.push_str("&gt;"),
+                    '\'' => res.push_str("&#39;"),
+                    c => res.push(c),
+                }
+            }
+
+            res.into()
+        } else {
+            s.into()
+        }
+    }
+
     fn format_row(result: &mut String, row: &[Cow<'_, str>], tag: &str) {
         result.push_str("\t<tr>\n");
         for cell in row.iter().map(|c| c.trim()) {
-            result.push_str(&format!("\t\t<{tag}>{cell}</{tag}>\n"));
+            let text = Self::escape(cell);
+            result.push_str(&format!("\t\t<{tag}>{text}</{tag}>\n"));
         }
         result.push_str("\t</tr>\n");
     }
@@ -57,3 +81,24 @@ impl Formatter for HtmlFormatter {
         result
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use std::borrow::Cow;
+
+    use crate::formatting::HtmlFormatter;
+
+    #[test]
+    fn html_escapes() {
+        assert_eq!(HtmlFormatter::escape("\"<>&\'"), "&quot;&lt;&gt;&amp;&#39;")
+    }
+
+    #[test]
+    fn html_unnecessary_escapes() {
+        let s = HtmlFormatter::escape("dfsfdsdz<fùù**ùù§");
+        if let Cow::Owned(_) = s {
+            panic!();
+        }
+    }
+}
+
