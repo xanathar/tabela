@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 09:24+0100\n"
+"POT-Creation-Date: 2025-03-23 13:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,40 +29,42 @@ msgid "Markdown;HTML;Tables;Spreadsheet;GTK;"
 msgstr "Markdown;HTML;Tabelle;Spreadsheet;Fogli di calcolo;"
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:8
-msgid ""
-"A small utility to format tables coming from spreadsheet into Markdown or "
-"HTML"
+#, fuzzy
+msgid "Format tables coming from spreadsheets into Markdown or HTML"
 msgstr ""
 "Una piccola utility per formattare tabelle provenienti da spreadsheet e "
 "fogli di calcolo in Markdown o HTML"
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:10
+#, fuzzy
 msgid ""
-"A really small utility to format tables coming from spreadsheet into "
-"Markdown or HTML. Input can be any text separated by TAB, commas or "
-"semicolon and it can output the table formatted for Markdown (and ASCII art) "
-"or plain HTML."
+"A really small utility to format tables coming from spreadsheets (or "
+"manually typed) into Markdown or HTML. Input can be any text separated by "
+"TAB, commas or semicolon and it can output the table formatted for Markdown "
+"(and ASCII art) or plain HTML. For use with spreadsheets, simply copy the "
+"spreadsheet cells, and paste it into the upper text area. Handles large "
+"tables reasonably well."
 msgstr ""
 "Una piccola utility per formattare tabelle provenienti da spreadsheet e "
 "fogli di calcolo in Markdown o HTML. L'input può essere un qualunque testo "
 "separatoda TAB, virgole o punti e virgola e può creare una tabella in "
 "formato Markdown(stile ASCII art) o semplice HTML."
 
-#: data/com.mastropaolo.www.tabela.metainfo.xml.in:16
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:15
 msgid "Marco Mastropaolo"
 msgstr "Marco Mastropaolo"
 
-#: data/com.mastropaolo.www.tabela.metainfo.xml.in:54
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:53
 msgid "Screenshot of a simple table formatted as Markdown, dark theme"
 msgstr ""
 "Screenshot di una semplice tabella formattata come Markdown; tema scuro."
 
-#: data/com.mastropaolo.www.tabela.metainfo.xml.in:58
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:57
 msgid "Screenshot of a 9.1MB large CSV formatted as Markdown, light theme"
 msgstr ""
 "Screenshot di un file CSV di 9.1MB formattato come Markdown; tema chiaro."
 
-#: data/com.mastropaolo.www.tabela.metainfo.xml.in:62
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:61
 msgid "Screenshot of a simple table formatted as HTML, dark theme"
 msgstr "Screenshot di una semplice tabella formattata come HTML; tema scuro."
 

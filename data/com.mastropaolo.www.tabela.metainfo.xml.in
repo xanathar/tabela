@@ -5,10 +5,9 @@
   <project_license>MIT</project_license>
 
   <name>Tabëla</name>
-  <summary>A small utility to format tables coming from spreadsheet into Markdown or HTML</summary>
+  <summary>Format tables coming from spreadsheets into Markdown or HTML</summary>
   <description>
-    <p>A really small utility to format tables coming from spreadsheet into Markdown or HTML. Input can be any text separated by TAB, commas or semicolon and it can
-      output the table formatted for Markdown (and ASCII art) or plain HTML.
+    <p>A really small utility to format tables coming from spreadsheets (or manually typed) into Markdown or HTML. Input can be any text separated by TAB, commas or semicolon and it can output the table formatted for Markdown (and ASCII art) or plain HTML. For use with spreadsheets, simply copy the spreadsheet cells, and paste it into the upper text area. Handles large tables reasonably well.
     </p>
   </description>
 
@@ -44,8 +43,8 @@
 
   <!-- Applications should set a brand color in both light and dark variants like so -->
   <branding>
-    <color type="primary" scheme_preference="light">#ff00ff</color>
-    <color type="primary" scheme_preference="dark">#993d3d</color>
+    <color type="primary" scheme_preference="light">#daaaff</color>
+    <color type="primary" scheme_preference="dark">#613583</color>
   </branding>
 
   <screenshots>
