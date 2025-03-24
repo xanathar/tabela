@@ -176,7 +176,7 @@ do_check () {
 
 do_run () {
     do_build
-    info "Build succesfull, running..."
+    info "Build successful, running..."
     _install/bin/tabela
 }
 

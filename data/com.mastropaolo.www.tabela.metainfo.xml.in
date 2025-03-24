@@ -5,7 +5,7 @@
   <project_license>MIT</project_license>
 
   <name>Tabëla</name>
-  <summary>Format tables coming from spreadsheets into Markdown or HTML</summary>
+  <summary>Format tables to Markdown or HTML</summary>
   <description>
     <p>A really small utility to format tables coming from spreadsheets (or manually typed) into Markdown or HTML. Input can be any text separated by TAB, commas or semicolon and it can output the table formatted for Markdown (and ASCII art) or plain HTML. For use with spreadsheets, simply copy the spreadsheet cells, and paste it into the upper text area. Handles large tables reasonably well.
     </p>
@@ -50,11 +50,7 @@
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/xanathar/tabela/refs/heads/main/doc_assets/albums_md.png</image>
-      <caption>Screenshot of a simple table formatted as Markdown, dark theme</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/xanathar/tabela/refs/heads/main/doc_assets/large_file_md.png</image>
-      <caption>Screenshot of a 9.1MB large CSV formatted as Markdown, light theme</caption>
+      <caption>Screenshot of a simple table formatted as Markdown</caption>
     </screenshot>
     <screenshot>
       <image>https://raw.githubusercontent.com/xanathar/tabela/refs/heads/main/doc_assets/albums_html.png</image>
@@ -63,6 +59,12 @@
   </screenshots>
 
   <releases>
+    <release version="1.1.0" date="2025-03-16">
+      <url type="details">https://github.com/xanathar/tabela/blob/main/README.md</url>
+      <description translate="no">
+        <p>Fixed: escape of special characters in HTML output</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2025-03-16">
       <url type="details">https://github.com/xanathar/tabela/blob/main/README.md</url>
       <description translate="no">
