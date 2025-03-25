@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 13:32+0100\n"
+"POT-Creation-Date: 2025-03-25 22:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,10 +30,8 @@ msgstr "Markdown;HTML;Tabelle;Spreadsheet;Fogli di calcolo;"
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:8
 #, fuzzy
-msgid "Format tables coming from spreadsheets into Markdown or HTML"
-msgstr ""
-"Una piccola utility per formattare tabelle provenienti da spreadsheet e "
-"fogli di calcolo in Markdown o HTML"
+msgid "Format tables to Markdown or HTML"
+msgstr "Formatta tabelle in Markdown o HTML"
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:10
 #, fuzzy
@@ -55,16 +53,12 @@ msgid "Marco Mastropaolo"
 msgstr "Marco Mastropaolo"
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:53
-msgid "Screenshot of a simple table formatted as Markdown, dark theme"
+#, fuzzy
+msgid "Screenshot of a simple table formatted as Markdown"
 msgstr ""
 "Screenshot di una semplice tabella formattata come Markdown; tema scuro."
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:57
-msgid "Screenshot of a 9.1MB large CSV formatted as Markdown, light theme"
-msgstr ""
-"Screenshot di un file CSV di 9.1MB formattato come Markdown; tema chiaro."
-
-#: data/com.mastropaolo.www.tabela.metainfo.xml.in:61
 msgid "Screenshot of a simple table formatted as HTML, dark theme"
 msgstr "Screenshot di una semplice tabella formattata come HTML; tema scuro."
 
@@ -115,3 +109,7 @@ msgstr "Scorciatoie da tastiera"
 #: src/window.ui:126
 msgid "_About Tabëla"
 msgstr "Informazioni su Tabëla"
+
+#~ msgid "Screenshot of a 9.1MB large CSV formatted as Markdown, light theme"
+#~ msgstr ""
+#~ "Screenshot di un file CSV di 9.1MB formattato come Markdown; tema chiaro."

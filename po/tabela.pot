@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 13:32+0100\n"
+"POT-Creation-Date: 2025-03-25 22:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "Markdown;HTML;Tables;Spreadsheet;GTK;"
 msgstr ""
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:8
-msgid "Format tables coming from spreadsheets into Markdown or HTML"
+msgid "Format tables to Markdown or HTML"
 msgstr ""
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:10
@@ -45,14 +45,10 @@ msgid "Marco Mastropaolo"
 msgstr ""
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:53
-msgid "Screenshot of a simple table formatted as Markdown, dark theme"
+msgid "Screenshot of a simple table formatted as Markdown"
 msgstr ""
 
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:57
-msgid "Screenshot of a 9.1MB large CSV formatted as Markdown, light theme"
-msgstr ""
-
-#: data/com.mastropaolo.www.tabela.metainfo.xml.in:61
 msgid "Screenshot of a simple table formatted as HTML, dark theme"
 msgstr ""
 

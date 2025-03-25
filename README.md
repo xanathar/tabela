@@ -13,6 +13,12 @@ output the table formatted for Markdown (and ASCII art) or plain HTML.
 It is typically used as a converter by pasting data coming from a spreadsheet like
 LibreOffice Calc or Gnumeric, but can also be used as a simple editor.
 
+## Installation
+
+Get it from FlatHub: [link](https://flathub.org/apps/com.mastropaolo.www.tabela).
+
+Or simply `flatpak install flathub com.mastropaolo.www.tabela`.
+
 ## Usage
 
 ![Example image of Tabela's UI](https://raw.githubusercontent.com/xanathar/tabela/refs/heads/main/doc_assets/albums_md.png)
