@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tabela package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tabela\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-25 22:28+0100\n"
+"PO-Revision-Date: 2025-04-19 16:52+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/com.mastropaolo.www.tabela.desktop.in:2
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:7 src/window.ui:6
+msgid "Tabëla"
+msgstr "Tabëla"
+
+#: data/com.mastropaolo.www.tabela.desktop.in:8
+msgid "Markdown;HTML;Tables;Spreadsheet;GTK;"
+msgstr "Markdown;HTML;Tabellen;Spreadsheet;Werkblad;GTK;"
+
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:8
+msgid "Format tables to Markdown or HTML"
+msgstr "Maak tabellen op met markdown of html"
+
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:10
+msgid ""
+"A really small utility to format tables coming from spreadsheets (or "
+"manually typed) into Markdown or HTML. Input can be any text separated by "
+"TAB, commas or semicolon and it can output the table formatted for Markdown "
+"(and ASCII art) or plain HTML. For use with spreadsheets, simply copy the "
+"spreadsheet cells, and paste it into the upper text area. Handles large "
+"tables reasonably well."
+msgstr ""
+"Een klein, eenvoudig hulpmiddel voor het opmaken van tabellen uit "
+"werkbladen (spreadsheets) of handmatig aangemaakte tabellen. Voer tekst in, "
+"gescheiden door tabs, komma's of puntkomma's, en zet het geheel om naar "
+"markdown (en ascii-kunst) of platte html. Voor gebruik in werkbladen is het "
+"kopiëren van de cellen aanbevolen. Lange tabellen worden redelijkerwijs "
+"ondersteund."
+
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:15
+msgid "Marco Mastropaolo"
+msgstr "Marco Mastropaolo"
+
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:53
+msgid "Screenshot of a simple table formatted as Markdown"
+msgstr "Schermfoto van een eenvoudige tabel in markdown"
+
+#: data/com.mastropaolo.www.tabela.metainfo.xml.in:57
+msgid "Screenshot of a simple table formatted as HTML, dark theme"
+msgstr "Schermfoto van een eenvoudige tabel in html (donker thema)"
+
+#: src/window.rs:36
+msgid "Markdown"
+msgstr "Markdown"
+
+#: src/window.rs:37
+msgid "HTML"
+msgstr "Html"
+
+#: src/window.rs:41
+msgid "TAB"
+msgstr "Tab"
+
+#: src/window.rs:42
+msgid "Comma"
+msgstr "Komma"
+
+#: src/window.rs:43
+msgid "Semicolon"
+msgstr "Puntkomma"
+
+#: src/window.ui:17
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+
+#: src/window.ui:32
+msgid "Separator"
+msgstr "Scheidingsteken"
+
+#: src/window.ui:44
+msgid "Format"
+msgstr "Opmaak"
+
+#: src/window.ui:55
+msgid "Titles"
+msgstr "Titels"
+
+#: src/window.ui:69
+msgid "Remove quotes"
+msgstr "Citaten wissen"
+
+#: src/window.ui:122
+msgid "_Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+#: src/window.ui:126
+msgid "_About Tabëla"
+msgstr "Over T_abëla"
