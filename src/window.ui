@@ -28,6 +28,53 @@
                 <property name="orientation">horizontal</property>
                 <property name="halign">center</property>
                 <child>
+                 <object class="AdwToggleGroup">
+                    <property name="active-name">picture</property>
+                    <child>
+                        <object class="AdwToggle">
+                        <property name="label">tsv</property>
+                        <property name="tooltip" translatable="yes">Picture Mode</property>
+                        <property name="name">picture</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="AdwToggle">
+                        <property name="label">;</property>
+                        <property name="tooltip" translatable="yes">Recording Mode</property>
+                        <property name="name">ssx</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="AdwToggle">
+                        <property name="label">,</property>
+                        <property name="tooltip" translatable="yes">Recording Mode</property>
+                        <property name="name">recording</property>
+                        </object>
+                    </child>
+                    </object>
+                </child>
+
+                <child>
+                 <object class="AdwToggleGroup">
+                    <property name="active-name">markdown</property>
+                    <child>
+                        <object class="AdwToggle">
+                        <property name="icon-name">markdown-symbolic</property>
+                        <property name="tooltip" translatable="yes">Picture Mode</property>
+                        <property name="name">markdown</property>
+                        </object>
+                    </child>
+                    <child>
+                        <object class="AdwToggle">
+                        <property name="icon-name">earth-symbolic</property>
+                        <property name="tooltip" translatable="yes">Picture Mode</property>
+                        <property name="name">html</property>
+                        </object>
+                    </child>
+                    </object>
+                </child>
+
+                <child>
                   <object class="GtkLabel">
                     <property name="label" translatable="yes">Separator</property>
                     <property name="margin-end">10</property>
