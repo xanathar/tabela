@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-25 22:35+0100\n"
+"POT-Creation-Date: 2025-04-20 23:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,6 +61,11 @@ msgstr ""
 #: data/com.mastropaolo.www.tabela.metainfo.xml.in:57
 msgid "Screenshot of a simple table formatted as HTML, dark theme"
 msgstr "Screenshot di una semplice tabella formattata come HTML; tema scuro."
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/application.rs:112
+msgid "translator-credits"
+msgstr ""
 
 #: src/window.rs:36
 msgid "Markdown"

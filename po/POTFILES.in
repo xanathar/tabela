@@ -3,5 +3,6 @@
 data/com.mastropaolo.www.tabela.desktop.in
 data/com.mastropaolo.www.tabela.gschema.xml
 data/com.mastropaolo.www.tabela.metainfo.xml.in
+src/application.rs
 src/window.rs
 src/window.ui
