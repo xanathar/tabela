@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tabela\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 23:30+0200\n"
+"POT-Creation-Date: 2025-04-20 23:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgid "Screenshot of a simple table formatted as HTML, dark theme"
 msgstr ""
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/application.rs:112
+#: src/application.rs:111
 msgid "translator-credits"
 msgstr ""
 

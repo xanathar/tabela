@@ -59,10 +59,21 @@
   </screenshots>
 
   <releases>
+    <release version="1.2.0" date="2025-04-21">
+      <url type="details">https://github.com/xanathar/tabela/blob/main/README.md</url>
+      <description translate="no">
+        <ul>
+          <li>Dutch translations (thanks to Heimen Stoffels)</li>
+          <li>Removed unnecessary permissions</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.0" date="2025-03-16">
       <url type="details">https://github.com/xanathar/tabela/blob/main/README.md</url>
       <description translate="no">
-        <p>Fixed: escape of special characters in HTML output</p>
+        <ul>
+          <li>Fixed: escape of special characters in HTML output</li>
+        </ul>
       </description>
     </release>
     <release version="1.0.0" date="2025-03-16">
